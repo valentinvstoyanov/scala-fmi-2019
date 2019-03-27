@@ -66,4 +66,19 @@ class FunctionsTest extends FlatSpec with Matchers {
   "countCoinChangeVariants" should "count the ways to give a change" in {
     countCoinChangeVariants(List(1, 2, 5), 6) shouldBe 5
   }
+
+  "bfsTraversal" should "traverse the graph" in {
+    val map = Map(1 -> List(2, 5, 8),
+      2 -> List(1, 3, 6),
+      3 -> List(2, 4),
+      4 -> List(3),
+      5 -> List(6),
+      6 -> List(7),
+      7 -> List(8),
+      8 -> List(9),
+      9 -> List())
+
+    bfsTraversal(1, 6, map).toList shouldBe List(1, 2, 5, 8, 3, 6)
+    bfsTraversal(4, 6, map).toList shouldBe List(4, 3, 2, 1, 6)
+  }
 }
