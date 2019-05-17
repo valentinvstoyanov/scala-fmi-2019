@@ -62,7 +62,7 @@ object UserRegistrationApp {
         case MonthOutOfRange(month) => s"Month $month is out of range"
         case DayOutOfRange(day) => s"Day $day is out of range"
 
-        case InvalidDate(date) => s"Date $date is not a valid date"
+        case InvalidDate(year, month, day) => s"Date $year-$month-$day is not a valid date"
       }.toList
 
       ("Provided birthday date is invalid:" :: errors).mkString("\n")

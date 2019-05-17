@@ -30,7 +30,7 @@ case class MonthIsNotAnInteger(month: String) extends DateError
 case class DayIsNotAnInteger(day: String) extends DateError
 case class MonthOutOfRange(month: Int) extends DateError
 case class DayOutOfRange(day: Int) extends DateError
-case class InvalidDate(date: Date) extends DateError
+case class InvalidDate(year: Int, month: Int, day: Int) extends DateError
 
 case class Email(user: String, domain: String)
 
