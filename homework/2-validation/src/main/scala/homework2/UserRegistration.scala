@@ -2,7 +2,7 @@ package homework2
 
 import java.time.LocalDate
 
-import Validated.OptionToValidated
+import homework2.Validated.OptionToValidated
 
 case class RegistrationForm(name: String,
                             email: String,
